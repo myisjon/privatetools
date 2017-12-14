@@ -1,3 +1,6 @@
+### 支持jupter themes
+更多详情: https://github.com/dunovank/jupyter-themes/blob/master/README.md
+
 ### docker run 
 
 #### create image
@@ -28,4 +31,3 @@ $ sudo docker run -i -p 127.0.0.1:8080:8080 jupyter:test jupyter-notebook --ip=0
 * Nginx 反向代理
 
 使用Nginx做反向代理，注意websocket的配置
-
