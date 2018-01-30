@@ -1,0 +1,29 @@
+{
+	"name": "Vimium++",
+	"time": 1517282542398,
+	"environment": {
+		"chrome": 64,
+		"extension": "1.63.0",
+		"platform": "win"
+	},
+	"exclusionRules": [
+		{
+			"pattern": "^https?://mail.google.com/",
+			"passKeys": ""
+		},
+		{
+			"pattern": "^https?://ecs\\.console\\.aliyun\\.com/",
+			"passKeys": ""
+		},
+		{
+			"pattern": "^https?://ipython\\.denghaihui\\.com/",
+			"passKeys": ""
+		},
+		{
+			"pattern": "^https?://koute\\.github\\.io/",
+			"passKeys": ""
+		}
+	],
+	"searchUrl": "https://www.google.com/search?q=$s Google",
+	"showAdvancedOptions": true
+}
