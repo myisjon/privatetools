@@ -6,7 +6,13 @@
 $ mkdir ~/.vim
 $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
-vimrc add nerdTree
+open vim
+
+vim install plug
+
+:PlugInstall
+
+vim suport nerdTree, python autocomplete(use jedi-vim)
 
 
 ## init tmux
