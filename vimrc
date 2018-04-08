@@ -38,8 +38,11 @@ set secure
 set number
 " Enable syntax highlighting
 syntax on
-" Highlight current line
-"set cursorline
+" Highlight current line and column
+set cursorline cursorcolumn
+
+highlight CursorColumn cterm=NONE ctermbg=3 ctermfg=15  guibg=NONE guifg=NONE
+
 set shiftwidth=4        " 自动缩进宽度
 "set softtabstop         " 敲入tab键时实际占有的列数
 set tabstop=4           " tab等同的空格数量
@@ -127,6 +130,30 @@ nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 
+"使用语法高亮折叠
+set foldenable
+set foldmethod=syntax
+set foldlevelstart=200
+
+" 支持c++ 11/14/17语法高亮
+let g:cpp_class_scope_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_no_function_highlight = 1
+
+" 支持缩紧对齐展示
+" colorscheme default
+" let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_auto_colors = 0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red  ctermbg=3
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green  ctermbg=4
+" set ts=4 sw=4 et
+" let g:indent_guides_start_level = 2
+" let g:indent_guides_guide_size = 1
+" nnoremap <silent> <Leader>i <Plug>IndentGuidesToggle
+
 " config pathogen
 " execute pathogen#infect()
 
@@ -209,6 +236,12 @@ Plug 'https://github.com/ervandew/supertab.git'
 Plug 'https://github.com/tpope/vim-pathogen.git'
 " url: https://github.com/scrooloose/nerdtree
 Plug 'https://github.com/scrooloose/nerdtree.git'
+
+" 支持c++ 11高亮语法
+Plug 'https://github.com/octol/vim-cpp-enhanced-highlight.git'
+
+" 缩紧对齐标签
+Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
 
 call plug#end()
 
