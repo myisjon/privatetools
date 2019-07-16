@@ -39,7 +39,7 @@ set number
 " Enable syntax highlighting
 syntax on
 " Highlight current line and column
-set cursorline cursorcolumn
+set cursorline " cursorcolumn
 
 highlight CursorColumn cterm=NONE ctermbg=3 ctermfg=15  guibg=NONE guifg=NONE
 
@@ -121,7 +121,7 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 " 开启paste模式
 set pastetoggle=<f5>
 "80 column tag
-set cc=119
+set cc=79
 
 " 去掉行尾为空格
 nnoremap <F6> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
@@ -134,6 +134,15 @@ match WhitespaceEOL /\s\+$/
 set foldenable
 set foldmethod=syntax
 set foldlevelstart=200
+
+" enable gitgutter
+let g:gitgutter_enabled=1
+let g:gitgutter_override_sign_column_highlight = 0
+if exists('&signcolumn')  " Vim 7.4.2201
+      set signcolumn=yes
+else
+        let g:gitgutter_sign_column_always = 1
+endif
 
 " 支持c++ 11/14/17语法高亮
 let g:cpp_class_scope_highlight = 1
@@ -164,6 +173,8 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowBookmarks=1
 map  :silent! NERDTreeToggle
+
+let NERDTreeShowHidden=1
 
 " config nerdTree files highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -242,6 +253,9 @@ Plug 'https://github.com/octol/vim-cpp-enhanced-highlight.git'
 
 " 缩紧对齐标签
 Plug 'https://github.com/nathanaelkane/vim-indent-guides.git'
+
+" vim 显示git diff
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
